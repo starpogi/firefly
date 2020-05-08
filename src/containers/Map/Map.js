@@ -6,13 +6,15 @@ import 'leaflet/dist/leaflet.css';
 
 import { 
   Map as LeafletMap, 
-  TileLayer,  
+  TileLayer,
+  ZoomControl
 } from 'react-leaflet';
+
 
 const useStyles = makeStyles(theme => ({
   map: {
     width: '100%',
-    height: 600
+    height: '100vh'
   }
 }));
 
@@ -23,8 +25,8 @@ type MapProps = {
 }
 
 const Map = ({
-  latitude = 37.772279,
-  longitude = -122.451734,
+  latitude = 14.601479,
+  longitude = 121.056635,
   zoom = 13
 }: MapProps) => {
   const classes = useStyles();
@@ -35,10 +37,15 @@ const Map = ({
       className={classes.map}
       center={position}
       zoom={zoom}
+      zoomControl={false}
     >
+      <ZoomControl 
+        position="bottomright"   
+      />
       <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+        maxZoom={20}
+        url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
+        attribution="&copy; <a href=&quot;https://stadiamaps.com/&quot;>Stadia Maps</a>, &copy; <a href=&quot;https://openmaptiles.org/&quot;>OpenMapTiles</a> &copy; <a href=&quot;http://openstreetmap.org&quot;>OpenStreetMap</a> contributors"
       />
     </LeafletMap>
   );
