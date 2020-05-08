@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import Map from './containers/Map/Map';
+import { Home } from './containers';
+
 
 ReactDOM.render(
   <React.Fragment>
-    <Map />
+    <Home />
   </React.Fragment>,
   document.getElementById('root')
 );
