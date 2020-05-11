@@ -27,7 +27,8 @@ const useStyles = makeStyles(theme => ({
 
 type SearchProps = {
   query: string,
-  className: string
+  className?: string,
+  ...
 }
 
 const Search = ({
@@ -39,9 +40,9 @@ const Search = ({
   
   return (
     <Paper 
+      {...props}
       component="form" 
       className={clsx(className, classes.root)} 
-      {...props}
     >
       <InputBase
         className={classes.input}

@@ -45,10 +45,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+type HomeProps = {
+  ...
+}
 
 const Home = ({
   ...props
-}) => {  
+}: HomeProps) => {  
   const classes = useStyles();
 
   return (

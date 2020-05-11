@@ -21,19 +21,22 @@ const useStyles = makeStyles(theme => ({
 type MapProps = {
   latitude?: number,
   longitude?: number,
-  zoom?: number
+  zoom?: number,
+  ...
 }
 
 const Map = ({
   latitude = 14.601479,
   longitude = 121.056635,
-  zoom = 13
+  zoom = 13,
+  ...props
 }: MapProps) => {
   const classes = useStyles();
   const position = [latitude, longitude];
   
   return (
     <LeafletMap 
+      {...props}
       className={classes.map}
       center={position}
       zoom={zoom}
