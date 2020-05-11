@@ -4,13 +4,19 @@ import React from 'react';
 
 import { SvgIcon } from '@material-ui/core';
 
+type IconProps = {
+  ...
+}
 
 const Firefly = ({
   ...props
-}) => {
+}: IconProps) => {
     
   return (
-    <SvgIcon viewBox="0 0 46 59" {...props}> 
+    <SvgIcon 
+      {...props} 
+      viewBox="0 0 46 59"
+    > 
       <g fill="#35495e">
         <path id="Shape" d="m31 11v5.53h-16v-5.53c-.0088783-1.18838497.3395163-2.35202281 1-3.34l7-2.66 7 2.66c.6604837.98797719 1.0088783 2.15161503 1 3.34z"/>
         <path id="Shape" d="m15 6c-4.75 0-6-3.27-6-5 0-.55228475.44771525-1 1-1 .5522847 0 1 .44771525 1 1 0 .31.17 3 4 3 .5522847 0 1 .44771525 1 1s-.4477153 1-1 1z"/>
